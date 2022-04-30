@@ -1,0 +1,7 @@
+.list_item_recommended {
+  gap: 10px 2px;
+  margin-bottom: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}

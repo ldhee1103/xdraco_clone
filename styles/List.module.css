@@ -1,22 +1,72 @@
 .list {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
+  min-height: 100%;
   /* background-color: rgb(6, 0, 27); */
   background-color: #020219;
 }
 
+.list_bar {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 24px;
+  height: 40px;
+}
+
+.list_bar_title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
 .exd_list_top {
-  display: inline-block;
   position: relative;
   top: 71px;
-  height: 460px;
-  width: 100%;
-  background-image: url('/img/exdBackground.png');
-  /* background-size: cover; */
-  background-position: center top;
+  --banner-height: 460px;
+  height: var(--banner-height);
+  background-image: url('https://www.xdraco.com/static/img/bg-banner.a79504bc.webp'), linear-gradient(180deg, #11001e, #1e0035);
+  background-position: 50% 0;
+  background-size: auto 100%;
   background-repeat: no-repeat;
 }
 
+.section {
+  position: relative;
+  top: 71px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+.section_inner {
+  margin: 0 auto;
+  padding: 0;
+  background-repeat: no-repeat;
+  width: 1200px;
+  box-sizing: inherit;
+}
+
+.wrap_grid {
+  display: grid;
+  grid-template-columns: 896px 40px 264px;
+  grid-template-rows: auto;
+  grid-template-areas: 'timeline . side';
+  padding-top: 32px;
+}
+.grid_timeline {
+  display: block;
+  box-sizing: inherit;
+  grid-area: timeline;
+}
+
+.exchange_list {
+  display: block;
+  box-sizing: inherit;
+}
 .large {
   height: 1000px;
 }
