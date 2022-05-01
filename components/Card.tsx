@@ -3,6 +3,7 @@ import styles from '../styles/Card.module.css';
 // import { useHistory } from 'react-router';
 
 function Card(props) {
+  const data = props.Item;
   return (
     <div data-v-a4e16890="" aria-disabled-flip="true" data-item-type="item-grade-4" className={styles.card}>
       <div className={styles.card_inner}>
@@ -32,7 +33,8 @@ function Card(props) {
           <div className={styles.wrap_name}>
             <dl className={styles.name}>
               <dt>Item Name</dt>
-              <dd className={styles.item_name}>Heavenly Connection Ring</dd>
+              {/* <dd className={styles.item_name}>Heavenly Connection Ring</dd> */}
+              <dd className={styles.item_name}>{data}</dd>
               <dt>Item Type</dt>
               <dd className={styles.item_type}>Ring</dd>
               <dt>Unique Number</dt>

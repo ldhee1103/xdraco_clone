@@ -3,30 +3,31 @@ import styles from '../styles/Banner.module.css';
 // import { useHistory } from 'react-router';
 
 function Banner(props) {
-  const [marginVlaue, setMarginVlaue] = useState('0vw');
   const [imgIndex, setImgIndex] = useState(0);
   const imgs = ['https://www.xdraco.com/static/img/bg-banner.a79504bc.webp', '/img/exd.png', '/img/mir4.png'];
 
   const bannerMove = (type) => {
+    let value = imgIndex;
     if (type == '+') {
-      if (imgIndex + 1 == imgs.length) {
+      if (value + 1 == imgs.length) {
         setImgIndex(0);
       } else {
-        setImgIndex(imgIndex + 1);
+        setImgIndex(value + 1);
       }
-    } else {
-      if (imgIndex == 0) {
+    } else if (type == '-') {
+      if (value == 0) {
         setImgIndex(imgs.length - 1);
       } else {
-        setImgIndex(imgIndex - 1);
+        setImgIndex(value - 1);
       }
+    } else {
+      setImgIndex(type);
     }
-    setMarginVlaue(imgIndex * -100 + 'vw');
   };
 
   return (
     <div className={styles.banner}>
-      <div className={styles.banner_container} style={{ 'margin-left': marginVlaue }}>
+      <div className={styles.banner_container} style={{ 'margin-left': imgIndex * -100 + 'vw' }}>
         {imgs.map((img, index) => (
           <div className={styles.img_container}>
             <img className={styles.banner_img} src={img}></img>
@@ -35,10 +36,10 @@ function Banner(props) {
       </div>
       <button className={styles.arrowRight} onClick={() => bannerMove('+')}></button>
       <button className={styles.arrowLeft} onClick={() => bannerMove('-')}></button>
-      <div>
-        <button></button>
-        <button></button>
-        <button></button>
+      <div className={styles.img_index_container}>
+        {imgs.map((img, index) => (
+          <button className={`${styles.banner_index_img} ${index == imgIndex && styles.banner_select} `} onClick={() => bannerMove(index)}></button>
+        ))}
       </div>
     </div>
   );
