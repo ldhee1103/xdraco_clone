@@ -6,6 +6,7 @@ function RecommendItem(props) {
   //   props 데이터 조회 후 각 값에 세팅
   return (
     <li className={styles.item_recommended}>
+      {/* card component 분리 */}
       <div className={styles.card}>
         <div className={styles.card_inner}>
           <div className={styles.card_layout_front}>

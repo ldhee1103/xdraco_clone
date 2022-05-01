@@ -1,0 +1,33 @@
+.wrap_select {
+  --select-font-color: #fff;
+  --select-font-size: 14px;
+  --select-height: 40px;
+  position: relative;
+  border-radius: 0;
+  height: var(--select-height);
+  color: var(--select-font-color);
+  font-size: var(--select-font-size);
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+
+.v_select {
+  padding: 8.5px 14px;
+  border-radius: 0;
+  border: 1px solid hsla(0, 0%, 100%, 0.15);
+  font-size: 14px;
+  background-color: #0f0f25;
+  box-sizing: border-box;
+  height: 100%;
+  color: white;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  min-width: 0;
+  width: 100%;
+}

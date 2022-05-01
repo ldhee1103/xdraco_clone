@@ -1,0 +1,283 @@
+.card {
+  --card-width: 212px;
+  --card-height: 312px;
+  --card-padding-top: 153px;
+  --card-top-height: 16px;
+  --card-margin-text: 22px;
+  --card-badge-size: 48px;
+  --card-margin-itemname: 24px;
+  --card-name-height: 52px;
+  --card-item-name-fontsize: 16px;
+  --card-item-type-fontsize: 12px;
+  --card-ribbon-width: 158px;
+  --card-ribbon-height: 20px;
+  --card-character-thumbnail: 144px;
+  --card-class-size: 28px;
+  --card-level-fontsize: 16px;
+  --card-divider-width: 172px;
+  --card-margin-space: 3px;
+  --card-padding-horizontal: 12px;
+  --card-thumb-width: 28px;
+  --card-ribbon-fontsize: 13px;
+  --card-power-fontsize: 24px;
+  --card-nftid-fontsize: 12px;
+  --card-level-fontsize2: 11px;
+  width: var(--card-width);
+  height: var(--card-height);
+  perspective: 1000px;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: transform 0.3s ease, filter 0.3s ease, -webkit-transform 0.3s ease, -webkit-filter 0.3s ease;
+}
+
+.card_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+.card_layer_front {
+  padding-right: var(--card-padding-horizontal);
+  padding-left: var(--card-padding-horizontal);
+  color: #fff;
+  background-position-y: calc(var(--card-height) * -1);
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: url('https://www.xdraco.com/static/img/sp-card.4437c4ef.webp') 0 0 / calc(var(--card-width) * 5) calc(var(--card-height) * 5) no-repeat;
+  box-sizing: border-box;
+}
+
+.by_what_draco {
+  width: 24px;
+  height: 24px;
+  background: url(data:image/webp;base64,UklGRvICAABXRUJQVlA4WAoAAAAQAAAALwAALwAAQUxQSKECAAABkFXbbh1JF4IhiMEEQiCEwYjBmEHMoMzAZpBi4GGQZiAIgnA/rDyaQURMAJ4nrYc5ediom+C3EzJD35TzqfIbaf/iGwyBBSSbvLY7FTaczIDy7v6O/JCGpSptBTAu3EarQ17466QLRKwvW64HyVFWSQBSo2+PdpJUALvb2UpWLXW4qQCLkeT+YCdJBZDKlnBz7Wy7M9xv/SPpG16Vzuu/N8RJE7wtxjNwuTLSEt5P1bZOkufFTvKDm1s7zUkbWQKgnEm6kyUQkiw3Bu8OCdAbIGqepk6yAEgyCR/uQTozAKgCENJWIH04ACz2hGcCgMVLO8w9AcqaADGSwOCLY0JlmIGTG6AnJyXJvobaI36m5MGAkNxXzo7vVHApPeAKANUnJiVJJ53M8AdACca0Wp+0TqR96YLzEY6JAgD+x0jWEbVOa8Znyac8jW0l+bVo67y+hz59p5qRSWMs5S2dbMoVGPTIoW+tk096AOKMB+RXGHAoNnrwBewlnWzKJE0PCypQXurTmCpn+wYFSP6KcM7T+D+NGlQA45UeyORlqhoMAOcbO+cBAKut05YCfoDxLB0M16mrTIIReMJy0dZQmzOsACCURPIEcsAPkKPHlqbeACcVSO52tOILUF4xAQBhAYwUAKoAkC0B2Z+NhNnIBYMNAJKbCtAbAOkPPCP8kLTUKRMKaU2S7QCQtJ+RD00IdztJtloQnyTZNmsJsci6CC5T+9k4D1yKczaaRPeXn5765HIFDeYmT9LHM4Tzhrsl8tLZ1jtrdRagTwX3y2QLIHr6qEU11+HmZIMYyYKnm7MnAEnWMki2mrelkfxCSVc8l1HbMGc8AKxGkgbjj+DVwrsK/GPo6gVvS78yyOBVwi+KnoFuznDkhN+WrQ47SLejasJzAFZQOCAqAAAAMAMAnQEqMAAwAD5tNphIpCMioSOIAIANiWkAABuBvT4OAAD++yGAAAAA)
+    0 0 / cover no-repeat;
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+.wrap_item {
+  position: absolute;
+  top: var(--card-top-height);
+  left: 0;
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.item {
+  vertical-align: top;
+  border-style: none;
+}
+
+.power_score {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.18px;
+}
+
+.power_score::before {
+  content: '';
+  display: block;
+  margin-right: 2px;
+  width: 20px;
+  height: 20px;
+  background: url(data:image/webp;base64,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)
+    0 0 / cover no-repeat;
+}
+
+.power_score dt {
+  position: absolute !important;
+  top: -1px;
+  left: -1px;
+  overflow: hidden;
+  visibility: hidden;
+  height: 1px !important;
+  width: 1px !important;
+  font-size: 0;
+  word-wrap: normal;
+}
+
+.wrap_badge {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: absolute;
+  top: calc(var(--card-padding-top) - var(--card-badge-size) / 2);
+  left: 0;
+  width: 100%;
+}
+
+.badge_tier {
+  background-position-y: 0;
+  font-size: 17px;
+  letter-spacing: -0.17px;
+  align-items: center;
+  width: var(--card-badge-size);
+  height: var(--card-badge-size);
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: url('https://www.xdraco.com/static/img/sp-badge-card.0c30ff25.webp') 0 0 / calc(var(--card-badge-size) * 2) auto no-repeat;
+}
+
+.badge {
+  background-position-y: 0;
+  -webkit-box-align: center;
+  align-items: center;
+  width: var(--card-badge-size);
+  height: var(--card-badge-size);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.45px;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: url('https://www.xdraco.com/static/img/sp-badge-card.0c30ff25.webp') 0 0 / calc(var(--card-badge-size) * 2) auto no-repeat;
+}
+
+.wrap_badge dt {
+  position: absolute !important;
+  top: -1px;
+  left: -1px;
+  overflow: hidden;
+  visibility: hidden;
+  height: 1px !important;
+  width: 1px !important;
+  font-size: 0;
+  word-wrap: normal;
+}
+
+.wrap_name {
+  padding-top: 160px;
+  margin-top: var(--card-margin-text);
+}
+
+.name {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--card-name-height);
+  line-height: 1.2;
+}
+
+.name dt {
+  position: absolute !important;
+  top: -1px;
+  left: -1px;
+  overflow: hidden;
+  visibility: hidden;
+  height: 1px !important;
+  width: 1px !important;
+  font-size: 0;
+  word-wrap: normal;
+}
+
+.item_name {
+  padding: 0 var(--card-margin-itemname);
+  line-height: 1.14;
+  color: #000;
+  font-weight: 700;
+  font-size: var(--card-item-name-fontsize);
+  letter-spacing: -0.34px;
+}
+
+.item_type {
+  padding: 0 14px;
+  margin-top: 2px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: var(--card-item-type-fontsize);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wrap_thumb {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 6%;
+  left: 0;
+  width: 100%;
+}
+
+.thumb {
+  margin-left: 4px;
+  width: var(--card-thumb-width);
+  height: var(--card-thumb-width);
+  line-height: 0;
+  font-size: 0;
+  background: url('https://www.xdraco.com/static/img/sp-thumbs-character.a67ca49b.webp') 0 0 / calc(var(--card-thumb-width) * 5) auto no-repeat;
+}
+
+.worrior {
+  margin-left: 0;
+  background-position-x: 0;
+  /* 비활성화일경우 아래 옵션 제거 */
+  background-position-y: calc(var(--card-thumb-width) * -5);
+}
+
+.sorcerer {
+  background-position-y: calc(var(--card-thumb-width) * -5);
+  background-position-x: calc(var(--card-thumb-width) * -1);
+}
+
+.taoist {
+  background-position-y: calc(var(--card-thumb-width) * -5);
+  background-position-x: calc(var(--card-thumb-width) * -2);
+}
+
+.lancer {
+  background-position-y: calc(var(--card-thumb-width) * -5);
+  background-position-x: calc(var(--card-thumb-width) * -3);
+}
+
+.arbalist {
+  background-position-y: calc(var(--card-thumb-width) * -5);
+  background-position-x: calc(var(--card-thumb-width) * -4);
+}
+
+.card_layer_back {
+  background-position-y: calc(var(--card-height) * -1);
+  padding: 9px 0;
+  color: #fff;
+  font-size: 14px;
+  background-position-x: calc(var(--card-width) * -2);
+  transform: rotateY(180deg);
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: url('https://www.xdraco.com/static/img/sp-card.4437c4ef.webp') 0 0 / calc(var(--card-width) * 5) calc(var(--card-height) * 5) no-repeat;
+  box-sizing: border-box;
+}

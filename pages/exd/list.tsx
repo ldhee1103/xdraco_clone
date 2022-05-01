@@ -5,6 +5,10 @@ import Footer from '../../components/Footer';
 import GridListBar from '../../components/GridListBar';
 import GridSide from '../../components/GridSide';
 import GridRecommend from '../../components/GridRecommend';
+import GridFilter from '../../components/GridFilter';
+import ListItem from '../../components/ListItem';
+import GridMoreViewButton from '../../components/GridMoreViewButton';
+import Banner from '../../components/Banner';
 import styles from '../../styles/List.module.css';
 
 function list() {
@@ -21,7 +25,7 @@ function list() {
     // <div className={styles.}></div>
     <div className={styles.list}>
       <Nav />
-      <div className={styles.exd_list_top}></div>
+      <Banner />
       <section className={styles.section}>
         <div className={styles.section_inner}>
           <div className={styles.wrap_grid}>
@@ -36,13 +40,15 @@ function list() {
                 </div>
                 <GridRecommend type="2" />
                 <GridListBar />
+                <GridFilter />
+                <ListItem />
+                <GridMoreViewButton />
               </div>
             </div>
             <GridSide />
           </div>
         </div>
       </section>
-      <div className={styles.large}>ege</div>
       <Footer />
     </div>
   );

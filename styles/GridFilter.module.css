@@ -1,0 +1,40 @@
+.wrap_filter {
+  margin-top: -16px;
+  /* position: sticky; */
+  top: 60px;
+  z-index: 1;
+  padding: 16px 0 10px;
+  background-color: #020219;
+}
+
+.wrap_filter_inner {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.filter_check {
+  height: 40px;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 1px solid hsla(0, 0%, 100%, 0.15);
+  padding: 8px;
+  background-color: #0f0f25;
+}
+
+.filter_check_img {
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
+}
+
+.filter_check_label {
+  margin-left: 8px;
+  color: #fff;
+  font-size: 14px;
+}

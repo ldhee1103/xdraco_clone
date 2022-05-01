@@ -22,17 +22,6 @@
   color: #fff;
 }
 
-.exd_list_top {
-  position: relative;
-  top: 71px;
-  --banner-height: 460px;
-  height: var(--banner-height);
-  background-image: url('https://www.xdraco.com/static/img/bg-banner.a79504bc.webp'), linear-gradient(180deg, #11001e, #1e0035);
-  background-position: 50% 0;
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-}
-
 .section {
   position: relative;
   top: 71px;
@@ -66,7 +55,4 @@
 .exchange_list {
   display: block;
   box-sizing: inherit;
-}
-.large {
-  height: 1000px;
 }

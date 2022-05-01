@@ -1,0 +1,27 @@
+.wrap_button {
+  margin-top: 24px;
+}
+
+.btn_viewmore {
+  --viewmore-height: 62px;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 12px;
+  min-height: var(--viewmore-height);
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  background-color: hsla(0, 0%, 100%, 0.05);
+  vertical-align: top;
+  box-sizing: border-box;
+  border-radius: 0;
+  -webkit-appearance: button;
+  cursor: pointer;
+  border-style: none;
+  text-transform: none;
+  overflow: visible;
+}

@@ -1,0 +1,12 @@
+.list_item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 16px;
+  padding: 0;
+}
+
+.list_item li {
+  max-width: 212px;
+  position: relative;
+  list-style: none;
+}

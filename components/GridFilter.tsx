@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/GridFilter.module.css';
+import { Select } from '@mui/material';
+import SelectBox from './SelectBox';
 
 function GridFilter(props) {
   return (
@@ -16,6 +18,7 @@ function GridFilter(props) {
             Collectibles
           </span>
         </div>
+        <SelectBox />
       </div>
     </div>
   );
