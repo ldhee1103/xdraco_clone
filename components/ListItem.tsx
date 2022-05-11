@@ -12,7 +12,7 @@ function ListItem(props) {
   const [items, setItems] = useState([1, 2, 2, 2, 2, 4, 3, 2, 1, 1, 2, 4, 5, 5, 2, 3, 3, 1, 2, 2, 3]);
   //   const items = [1, 2, 2, 2, 4, 3, 2, 1, 1, 2, 4, 5, 5, 2, 3, 3, 1, 2, 2, 3];
   const nextOption = useSelector(selectOption);
-  if (nextOption.listOption != option) {
+  if (nextOption != null && nextOption.listOption != option) {
     const temp = [];
     console.log('render');
     for (let i = 0; i < oriItems.length; i++) {
